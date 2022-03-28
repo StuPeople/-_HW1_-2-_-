@@ -1,0 +1,16 @@
+module decoder (E , In , Out);
+2. input E; input [2:0] In;
+3. output [7:0] Out;
+4. wire [7:0] Out;
+5. wire tmp0 , tmp1 , tmp2;
+6. not not1(tmp0,In[0]); not not2(tmp1,In[1]);
+7. not not3(tmp2,In[2]);
+8. and and0(Out[0] , E , tmp0 , tmp1 , tmp2);
+9. and and1(Out[1] , E , In[0] , tmp1 , tmp2);
+10. and and2(Out[2] , E , tmp0 , In[1] , tmp2);
+11. and and3(Out[3] , E , In[0] , In[1] , tmp2);
+12. and and4(Out[4] , E , tmp0 , tmp1 , In[2]);
+13. and and5(Out[5] , E , In[0] , tmp1 , In[2]);
+14. and and6(Out[6] , E , tmp0 , In[1] , In[2]);
+15. and and7(Out[7] , E , In[0] , In[1] , In[2]);
+16. endmodule
