@@ -1,0 +1,7 @@
+module voter_if (I, O);
+    input [3:0] I;
+    output [3:1] O;
+    reg [3:1] O; 
+    always@ (I)
+    case (I)
+endmoudle
