@@ -1,0 +1,21 @@
+module Counter1(Reset, Enable, clk, Out);
+
+input Reset, Enable, clk;
+output [2:0] Out;
+reg [2:0] Out;
+reg [4:0] feedback;
+
+always @(posedge clk)
+begin
+    if(Reset) 
+        Out <= 3’d0; 
+    else begin
+        if(Enable == 1'b1) 
+            if(Out == 3'd7) 
+                Out <= rand(1~7);
+            else
+                Out <= Out;
+        end
+    end
+    feedback <= Out[0]+Out[1]+Out[3]
+endmodule 
